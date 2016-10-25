@@ -1,0 +1,268 @@
+{% load staticfiles %}
+<html>
+    <head>
+      <meta charset="utf-8">
+        <title>Press Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="all">
+
+        <!-- Flexslider stylesheet -->
+        <link href="{% static 'js/flexslider/flexslider.css' %}" rel="stylesheet" media="all">
+
+        <!-- Pretty Photo stylesheet -->
+        <link href="{% static 'js/swipebox/swipebox.css' %}" rel="stylesheet" media="all">
+
+        <!-- Include the site main stylesheet -->
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+
+        <!-- Include the site skin stylesheet -->
+        <!-- Political press has 4 skins, but you can use only one of them -->
+        <link href="{% static 'css/skins/default.css' %}" rel="stylesheet" media="all">
+        <!--<link rel="stylesheet" href="{% static 'css/talks.css' %}">-->
+       {% block extrastyles %}{% endblock %}
+
+    </head>
+
+<body>
+<!-- Header Wrapper -->
+
+<div class="header-wrapper">
+
+
+
+    <!-- Start Header -->
+
+    <header role="banner" class="header container">
+
+
+
+        <div class="donate-now clearfix">
+
+            <a target="_blank" title="login" href="#">Log In</a>
+
+        </div>
+
+
+
+        <!-- Start of Main Navigation -->
+        <div class="logo clearfix">
+             <h2 class="logo-heading">
+                 <a href="pressrelease_short"><img height="70px" class="logo"  src="{% static 'images/logo.png' %}" alt="logo" ></a>
+             </h2>
+         </div>
+
+        <nav role="navigation" class="nav main-menu clearfix" id="nav">
+
+            <div class="menu-main-menu-container">
+
+                <ul class="clearfix" id="menu-main-menu">
+
+                    <li><a href="{% url 'pressrelease_short' %}">Home</a></li>
+
+
+                       {% if user.is_authenticated %}
+
+                    <li><a href="#">Talks</a>
+
+                        <ul>
+
+                            <li><a href="{% url 'talks_list' %}">Talks List</a></li>
+
+                            <li><a href="{% url 'talk_new' %}">Upload Talk</a></li>
+
+                            <li><a href="{% url 'talks_detail' %}">Edit Talk</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    {% else %}
+
+                     <li><a href="{% url 'talks_list' %}">Talks</a></li>
+                     {% endif %}
+
+
+
+                     <li><a href="{% url 'album_list' %}">Gallery</a>
+
+                              </li>
+
+                              <li><a href="{% url 'events' %}">Events</a>
+
+
+
+                              </li>
+
+                              <li><a href="{% url 'pressrelease' %}">Press Realese</a>
+
+
+
+                    </li>
+
+
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- End of Main Navigation -->
+
+
+
+        <!-- Logo -->
+
+
+
+
+
+    </header><!-- End Header -->
+
+
+
+</div><!-- End of header-wrapper -->
+
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+<!-- Footer -->
+<footer role="contentinfo" class="footer">
+
+    <div class="footer-top">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_text" id="text-2">
+                        <h3 class="title">About</h3>
+                        <div class="textwidget">
+                            <p>IIIT-H was set up as a research university focused on the core areas of Information Technology, such as Computer Science, Electronics and Communications, and their applications in other domains. The institute evolved strong research programmes in a host of areas, with computation or IT providing the connecting thread, and with an emphasis on the development of technology and applications, which can be transferred for use to industry and society. This required carrying out basic research that can be used to solve real life problems.  </p>
+                        </div>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_recent_entries" id="recent-posts-3">
+                        <h3 class="title">Recent Posts</h3>
+                        <ul>
+                          {% for event_recent in events_recent %}
+                            <li>
+                                <a href="#">{{event_recent.Title}}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_text" id="text-4">
+                        <h3 class="title">Latest Tweets</h3>
+                        <ul id="twitter_update_list">
+                            <li>No Tweet Loaded !</li>
+                        </ul>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_nav_menu" id="nav_menu-2">
+                        <h3 class="title">Quick Links</h3>
+                        <div class="menu-footer-menu-container">
+                            <ul class="menu" id="menu-footer-menu">
+                                <li><a href="{% url 'pressrelease_short' %}">Home</a></li>
+                                <li><a href="{% url 'talks_list' %}">Talks</a></li>
+                                <li><a href="{% url 'album_list' %}">Gallery</a></li>
+                                <li><a href="{% url 'events' %}">Event</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div><!-- End of .footer-top -->
+
+    <!-- footer-bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+
+            <p class="copyright">Copyright &copy; 2016. All Rights Reserved.</p>
+
+            <!-- Social Navigation -->
+            <ul class="social-nav clearfix">
+                <li class="facebook"><a href="https://www.facebook.com/IIITH/" target="_blank"></a></li>
+                <li class="twitter"><a href="https://twitter.com/IIIT_Hyderabad" target="_blank"></a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/company/iiit-hyderabad" target="_blank"></a></li>
+                <li class="youtube"><a href="https://www.youtube.com/channel/UCzCMyBy0VRoQBF8x-TsXTnQ" target="_blank"></a></li>
+                <!--li class="skype"><a href="skype:#?add" target="_blank"></a></li>
+                <li class="flickr"><a href="#" target="_blank"></a></li>
+                <li class="deviantart"><a href="#" target="_blank"></a></li>
+                <li class="google"><a href="#" target="_blank"></a></li>
+                <li class="stumble"><a href="#" target="_blank"></a></li -->
+            </ul>
+
+        </div>
+    </div><!-- End of .footer-bottom -->
+
+</footer>
+<!-- End of Footer -->
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/flexslider/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/swipebox/jquery.swipebox.min.js' %}"></script>
+<script src="{% static 'js/isotope/jquery.isotope.min.js' %}"></script>
+<script src="{% static 'js/jquery.jcarousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.cycle2.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/responsive-nav.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-twitterFetcher.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+
+
+
+
+</body>
+</html>

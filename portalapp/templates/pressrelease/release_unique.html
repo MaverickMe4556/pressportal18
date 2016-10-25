@@ -1,0 +1,47 @@
+{% extends 'talks/base.html' %}
+
+{% block content %}
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Press Release</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div>
+
+<div class="page-container container">
+
+    <div class="row">
+
+        <!-- start of page content -->
+        <div class="main col-lg-12 col-md-12" role="main">
+            <article class="format-image hentry clearfix">
+                <header>
+                    <h1 class="post-title"><a href="#">{{pressrelease.Title}}</a></h1>
+                    <div class="post-meta clearfix">
+                        <span class="date"> {{pressrelease.date}} </span>
+                    </div><!-- end of post meta -->
+                </header>
+                <figure>
+                    <a href="#" title="{{pressrelease.Title}}">
+                        <img src="{{pressrelease.image.url}}" class="img-responsive wp-post-image" alt="8th-post-featured">
+                    </a>
+                </figure>
+                <div class="post-content-wrapper clearfix">
+                  {{pressrelease.content}}
+                </div>
+         </article>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}

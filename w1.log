@@ -1,0 +1,205 @@
+[2016-10-11 00:58:05,653: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2016-10-11 00:58:05,855: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2016-10-11 00:58:05,862: INFO/MainProcess] mingle: searching for neighbors
+[2016-10-11 00:58:06,867: INFO/MainProcess] mingle: all alone
+[2016-10-11 00:58:06,875: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2016-10-11 00:58:06,876: WARNING/MainProcess] w1@singhal-Inspiron-5558 ready.
+[2016-10-11 01:03:47,077: INFO/MainProcess] Received task: portalapp.tasks.user_send_activation_email[674f5564-f356-4ec3-b14a-7aaa813073d1]
+[2016-10-11 01:03:51,616: INFO/MainProcess] Task portalapp.tasks.user_send_activation_email[674f5564-f356-4ec3-b14a-7aaa813073d1] succeeded in 4.537401707s: None
+[2016-10-22 21:38:57,446: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2016-10-22 21:38:57,639: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2016-10-22 21:38:57,647: INFO/MainProcess] mingle: searching for neighbors
+[2016-10-22 21:38:58,651: INFO/MainProcess] mingle: all alone
+[2016-10-22 21:38:58,657: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2016-10-22 21:38:58,657: WARNING/MainProcess] w1@singhal-Inspiron-5558 ready.
+[2016-10-22 21:38:58,659: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[adbe0720-ee80-47ab-a991-d8f8828673cb]
+[2016-10-22 21:38:58,661: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[06cc2942-7e52-4cfd-bdcf-5d96eada25e8]
+[2016-10-22 21:38:58,663: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[2ef0a743-ddc6-455b-b1d3-16e5b9e02df7]
+[2016-10-22 21:38:58,664: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[f914ad74-d842-49bc-a4eb-7bca6d1fcf7c]
+[2016-10-22 21:38:58,669: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[f964e45e-24b1-4346-89e6-08b24c67518a]
+[2016-10-22 21:38:58,670: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[e7b96ad1-a915-4a8a-9efe-965e413678cd]
+[2016-10-22 21:38:58,672: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[0d4a8920-46b8-41f5-a2f6-d14fab9c6f88]
+[2016-10-22 21:38:58,674: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[c2da89c5-11b8-4d21-acb2-ecbf16d732e7]
+[2016-10-22 21:38:58,675: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[e81ef656-4dfb-4b9f-b1ec-22bf8a12af7c]
+[2016-10-22 21:38:58,676: INFO/MainProcess] Received task: portalapp.tasks.user_send_activation_email[720052d9-fd41-47b0-b3aa-2c2564a7ac0b]
+[2016-10-22 21:38:58,706: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[adbe0720-ee80-47ab-a991-d8f8828673cb] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,707: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[06cc2942-7e52-4cfd-bdcf-5d96eada25e8] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,707: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[f914ad74-d842-49bc-a4eb-7bca6d1fcf7c] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,708: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[2ef0a743-ddc6-455b-b1d3-16e5b9e02df7] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,710: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[f964e45e-24b1-4346-89e6-08b24c67518a] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,710: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[e7b96ad1-a915-4a8a-9efe-965e413678cd] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,712: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[0d4a8920-46b8-41f5-a2f6-d14fab9c6f88] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,712: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[c2da89c5-11b8-4d21-acb2-ecbf16d732e7] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:38:58,714: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[e81ef656-4dfb-4b9f-b1ec-22bf8a12af7c] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:39:02,481: INFO/MainProcess] Task portalapp.tasks.user_send_activation_email[720052d9-fd41-47b0-b3aa-2c2564a7ac0b] succeeded in 3.768083103s: None
+[2016-10-22 21:41:21,081: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[79d8e5a2-87b5-4474-8587-9780a8718c0d]
+[2016-10-22 21:41:21,083: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[79d8e5a2-87b5-4474-8587-9780a8718c0d] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[request.user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:45:47,545: INFO/MainProcess] Received task: portalapp.tasks.user_send_activation_email[b26f4f69-7dcd-47f4-b9e2-bd90175e5ea6]
+[2016-10-22 21:45:51,513: INFO/MainProcess] Task portalapp.tasks.user_send_activation_email[b26f4f69-7dcd-47f4-b9e2-bd90175e5ea6] succeeded in 3.96770524s: None
+[2016-10-22 21:50:33,516: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[cd482f32-9a3a-405c-82b1-e731bda8220d]
+[2016-10-22 21:50:33,519: INFO/MainProcess] Received task: portalapp.tasks.user_send_activation_email[42d52169-e742-404c-ab49-db788ef39712]
+[2016-10-22 21:50:33,522: ERROR/MainProcess] Task portalapp.tasks.user_upload_activation_email[cd482f32-9a3a-405c-82b1-e731bda8220d] raised unexpected: NameError("global name 'request' is not defined",)
+Traceback (most recent call last):
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/simran/saiSSAD/SSAD18core/Source/portalapp/tasks.py", line 16, in user_upload_activation_email
+    send_mail('You Have Edited your talk', 'Confirmation mail', 'settings.EMAIL_HOST_USER',[user.email], fail_silently=False)
+NameError: global name 'request' is not defined
+[2016-10-22 21:50:37,052: INFO/MainProcess] Task portalapp.tasks.user_send_activation_email[42d52169-e742-404c-ab49-db788ef39712] succeeded in 3.531744341s: None
+[2016-10-22 21:53:42,244: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2016-10-22 21:53:42,433: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2016-10-22 21:53:42,440: INFO/MainProcess] mingle: searching for neighbors
+[2016-10-22 21:53:43,445: INFO/MainProcess] mingle: all alone
+[2016-10-22 21:53:43,450: WARNING/MainProcess] /home/simran/saiSSAD/SSAD18core/Source/env/lib/python2.7/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2016-10-22 21:53:43,450: WARNING/MainProcess] w1@singhal-Inspiron-5558 ready.
+[2016-10-22 21:54:13,076: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[60a1e05a-f993-44fe-9748-1c7f854361cd]
+[2016-10-22 21:54:13,078: INFO/MainProcess] Received task: portalapp.tasks.user_send_activation_email[94f6371d-9ea2-4131-8d05-593f58f84445]
+[2016-10-22 21:54:16,864: INFO/MainProcess] Task portalapp.tasks.user_upload_activation_email[60a1e05a-f993-44fe-9748-1c7f854361cd] succeeded in 3.785349375s: None
+[2016-10-22 21:54:17,327: INFO/MainProcess] Task portalapp.tasks.user_send_activation_email[94f6371d-9ea2-4131-8d05-593f58f84445] succeeded in 4.248018226s: None
+[2016-10-22 22:00:10,353: INFO/MainProcess] Received task: portalapp.tasks.user_upload_activation_email[4e7d1267-e223-4e6c-aac6-27a2481f6157]
+[2016-10-22 22:00:13,838: INFO/MainProcess] Task portalapp.tasks.user_upload_activation_email[4e7d1267-e223-4e6c-aac6-27a2481f6157] succeeded in 3.482943732s: None

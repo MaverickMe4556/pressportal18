@@ -1,0 +1,5 @@
+[INFO]2016-10-10 01:26:27 PID 1400: Acquiring lock for sending queued emails at /tmp/post_office.lock
+[INFO]2016-10-10 01:26:27 PID 1400: Started sending 1 emails with 1 processes.
+[INFO]2016-10-10 01:26:27 PID 1400: Process started, sending 1 emails
+[INFO]2016-10-10 01:26:32 PID 1400: Process finished, 1 attempted, 1 sent, 0 failed
+[INFO]2016-10-10 01:26:32 PID 1400: 1 emails attempted, 1 sent, 0 failed

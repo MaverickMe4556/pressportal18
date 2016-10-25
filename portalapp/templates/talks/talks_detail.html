@@ -1,0 +1,101 @@
+{% extends 'talks/base.html' %}
+
+{% block content %}
+
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Talks</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div><!-- End of .header-bottom-wrapper -->
+<div class="page-container container">
+
+        <div class="row">
+
+
+{% for talk in talks %}
+<div class="col-lg-4 col-md-12  col-sm-12  col-xs-12">
+  <figure>
+  <br>
+                              <a title="{{talk.speaker}}" href="#">
+
+  <img src="{{ talk.image.url }}" class="candidate-image wp-post-image" alt="{{talk.speaker}}" width="100%" height="230px" />
+
+         </a>
+
+                          </figure>
+                          <div class="post-meta clearfix" style="background-color: #e8e9ef;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+                          <center><h4 class="post-title" style="font-size:21px; font-weight: 700;align="center";" ><a href="{% url 'talk_part' pk=talk.pk %}" title = "{{talk.topic}}"  > {{talk.topic|truncatechars_html:28}}</a></h4></center>
+                              <center><span>By</span> <a rel="author" title="Speaker" href="#">{{talk.speaker}}</a></center>
+
+
+                            <center>  <span class="date"> {{talk.date_and_time}}</span></center>
+
+                            <center>  <span class="category">in <a title="Venue" href="#">{{talk.venue}}</a></span></center>
+                              <br>
+                              <p>{{talk.abstract|truncatechars:105}}</p>
+                          <a class="pp-btn grey" href="{% url 'talk_part' pk=talk.pk %}">Read More</a>
+                          <a class="pp-btn grey sm" href="{% url 'talk_edit' pk=talk.pk %}" >Edit</a>
+                          </div><!-- end of post meta -->
+    <!--
+    <p><a class="pp-btn grey sm" href="{% url 'talk_edit' pk=talk.pk %}">Edit</a></p>
+  <h3 class="post-title" style="white-space: nowrap; overflow: hidden;"><a href="{% url 'talk_part' pk=talk.pk %}" title = "{{talk.topic}}"  >{{talk.topic}}</a></h3>
+
+                              <div class="post-meta clearfix">
+
+                                  <span>By</span> <a rel="author" title="Speaker" href="#">{{talk.speaker}}</a>
+
+                                      <br>
+                                  <span class="date"> {{talk.date_and_time}}</span>
+                                    <br>
+                                  <span class="category">in <a title="Venue" href="#">{{talk.venue}}</a></span>
+
+                              </div><!-- end of post meta -->
+
+
+
+                    <!--      <figure>
+                          <br>
+                                                      <a title="{{talk.speaker}}" href="#">
+
+                          <img src="{{ talk.image.url }}" class="candidate-image wp-post-image" alt="{{talk.speaker}}" width="354px" height="200px" />
+
+                                 </a>
+
+                                                  </figure>
+
+
+
+
+
+                          <a class="read-more" href="{% url 'talk_part' pk=talk.pk %}">...Read </a>-->
+
+<!--  <p><a class="pp-btn grey sm" href="{% url 'talk_edit' pk=talk.pk %}">Edit</a></p>
+   <p><strong>Talk On: </stronge><a href="">{{talk.topic}} </a></p>
+   <p><strong>Speaker: </strong>{{talk.speaker}} </p>
+<div class="date">
+   <p><strong>Date & Time: </strong>{{talk.date_and_time}} </p>
+</div>
+
+ <p><strong>Venue: </strong>{{talk.venue}} </p>
+ <dl class="toggle clearfix">
+   <dt><span class="glyphicon glyphicon-chevron"></span>Read More</dt>
+<dd><p><strong>Abstract: </strong>{{talk.abstract|linebreaksbr}} </p>
+  <p><strong>Bio of the Speaker: </strong>{{talk.bio|linebreaksbr}}</p>
+<p><strong>Faculty Coordinator: </strong>{{talk.coordinator}}</p></dd>
+</dl>
+-->
+    </div>
+{% endfor %}
+
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'talks/base.html' %}
+
+{% block content %}
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Talks</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div>
+<div class="page-container container">
+
+        <div class="row">
+
+<img src="{{ talk.image.url }}" class="alignleft candidate-image wp-post-image" alt="{{talk.speaker}}" width="260px" height="260px" />
+
+<div class="post-content-wrapper clearfix">
+         <p><strong>Talk On: </strong><a href="">{{talk.topic}} </a></p>
+         <p><strong>Speaker: </strong>{{talk.speaker}} </p>
+      <div class="date">
+         <p><strong>Date & Time: </strong>{{talk.date_and_time}} </p>
+      </div>
+
+       <p><strong>Venue: </strong>{{talk.venue}} </p>
+               <p><strong>Abstract: </strong>{{talk.abstract|linebreaksbr}} </p>
+
+
+            <p><strong>Bio of the Speaker: </strong>{{talk.bio|linebreaksbr}}</p>
+              <p><strong>Faculty Coordinator: </strong>{{talk.coordinator}}</p>
+
+</div>
+
+
+</div>
+</div>
+
+
+{% endblock %}

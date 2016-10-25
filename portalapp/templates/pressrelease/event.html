@@ -1,0 +1,52 @@
+{% extends 'talks/base.html' %}
+
+{% block content %}
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Events</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div><!-- End of .header-bottom-wrapper -->
+{% for event in events %}
+
+<!-- page-container -->
+<div class="page-container container">
+
+    <div class="row">
+
+        <!-- start of page content -->
+        <div class="main col-md-12" role="main">
+            <div id="testimonials">
+                <ul class="supporters clearfix">
+                    <li class="clearfix">
+                        <div class="thumb col-lg-12">
+                            <div class="imgbox">
+                                <img src="{{event.image.url}}" width="240%" alt="testi3" />
+                            </div>
+                        </div>
+                        <div class="detail col-lg-12">
+                            <blockquote>
+                              <h2>{{event.Title}}</h2>
+                                <p>{{event.venue}}</p>
+                            </blockquote>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end of page content -->
+    </div>
+
+</div><!-- End of .page-container -->
+
+{% endfor %}
+
+
+{% endblock %}

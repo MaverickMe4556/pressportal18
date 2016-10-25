@@ -1,0 +1,270 @@
+{% load staticfiles %}
+<html>
+    <head>
+      <meta charset="utf-8">
+        <title>Talks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="all">
+
+        <!-- Flexslider stylesheet -->
+        <link href="{% static 'js/flexslider/flexslider.css' %}" rel="stylesheet" media="all">
+
+        <!-- Pretty Photo stylesheet -->
+        <link href="{% static 'js/swipebox/swipebox.css' %}" rel="stylesheet" media="all">
+
+        <!-- Include the site main stylesheet -->
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+
+        <!-- Include the site skin stylesheet -->
+        <!-- Political press has 4 skins, but you can use only one of them -->
+        <link href="{% static 'css/skins/lighter-green.css' %}" rel="stylesheet" media="all">
+        <!--<link rel="stylesheet" href="{% static 'css/talks.css' %}">-->
+
+    </head>
+
+<body>
+<!-- Header Wrapper -->
+
+<div class="header-wrapper">
+
+
+
+    <!-- Start Header -->
+
+    <header role="banner" class="header container">
+
+
+
+        <div class="donate-now clearfix">
+
+            <a target="_blank" title="Donate Now" href="#">Log In</a>
+
+        </div>
+
+
+
+        <!-- Start of Main Navigation -->
+
+        <nav role="navigation" class="nav main-menu clearfix" id="nav">
+
+            <div class="menu-main-menu-container">
+
+                <ul class="clearfix" id="menu-main-menu">
+
+                    <li><a href="index.html">Home</a></li>
+
+
+                       {% if user.is_authenticated %}
+
+                    <li><a href="#">Talks</a>
+
+                        <ul>
+
+                            <li><a href="{% url 'talks_list' %}">Talks List</a></li>
+
+                            <li><a href="{% url 'talk_new' %}">Upload Talk</a></li>
+
+                            <li><a href="{% url 'talks_detail' %}">Edit Talk</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    {% else %}
+
+                     <li><a href="{% url 'talks_list' %}">Talks</a></li>
+                     {% endif %}
+
+
+
+					 <li><a href="{% url 'photo_list' %}">Gallery</a>
+
+
+                    </li>
+
+                    <li><a href="#">Press Realese</a>
+
+
+
+                    </li>
+
+
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- End of Main Navigation -->
+
+
+
+        <!-- Logo -->
+
+        <div class="logo clearfix">
+             <h2 class="logo-heading">
+                 <a href="index.html" title="Press Portal"><img alt="Political Press" src="images/temp-images/logo.png">IIIT Hyderabad</a>
+             </h2>
+         </div>
+
+
+
+    </header><!-- End Header -->
+
+
+
+</div><!-- End of header-wrapper -->
+
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+<!-- Footer -->
+<footer role="contentinfo" class="footer">
+
+    <div class="footer-top">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_text" id="text-2">
+                        <h3 class="title">About</h3>
+                        <div class="textwidget">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                        </div>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_recent_entries" id="recent-posts-3">
+                        <h3 class="title">Recent Posts</h3>
+                        <ul>
+                            <li>
+                                <a href="#">Featured Dolor Ipsum Post</a>
+                            </li>
+                            <li>
+                                <a href="#">Sample Image Post</a>
+                            </li>
+                            <li>
+                                <a href="#">Sample Post with Featured Image</a>
+                            </li>
+                            <li>
+                                <a href="#">Sample Post with Gallery Post Format</a>
+                            </li>
+                            <li>
+                                <a href="#">Sample Video Post</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_text" id="text-4">
+                        <h3 class="title">Latest Tweets</h3>
+                        <ul id="twitter_update_list">
+                            <li>No Tweet Loaded !</li>
+                        </ul>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6">
+
+                    <!-- widget -->
+                    <section class="widget widget_nav_menu" id="nav_menu-2">
+                        <h3 class="title">Quick Links</h3>
+                        <div class="menu-footer-menu-container">
+                            <ul class="menu" id="menu-footer-menu">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Biography</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- End of .widget -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div><!-- End of .footer-top -->
+
+    <!-- footer-bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+
+            <p class="copyright">Copyright &copy; 2016. All Rights Reserved.</p>
+
+            <!-- Social Navigation -->
+            <ul class="social-nav clearfix">
+                <li class="facebook"><a href="#" target="_blank"></a></li>
+                <li class="twitter"><a href="#" target="_blank"></a></li>
+                <li class="linkedin"><a href="#" target="_blank"></a></li>
+                <li class="youtube"><a href="#" target="_blank"></a></li>
+                <li class="skype"><a href="skype:#?add" target="_blank"></a></li>
+                <li class="flickr"><a href="#" target="_blank"></a></li>
+                <li class="deviantart"><a href="#" target="_blank"></a></li>
+                <li class="google"><a href="#" target="_blank"></a></li>
+                <li class="stumble"><a href="#" target="_blank"></a></li>
+            </ul>
+
+        </div>
+    </div><!-- End of .footer-bottom -->
+
+</footer>
+<!-- End of Footer -->
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/flexslider/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/swipebox/jquery.swipebox.min.js' %}"></script>
+<script src="{% static 'js/isotope/jquery.isotope.min.js' %}"></script>
+<script src="{% static 'js/jquery.jcarousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.cycle2.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/responsive-nav.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-twitterFetcher.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+{% extends 'talks/base.html' %}
+
+{% block content %}
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Talks</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div><!-- End of .header-bottom-wrapper -->
+
+<div class="page-container container">
+
+        <div class="row">
+
+
+{% for talk in talks %}
+
+    <div class="col-lg-4 col-md-12  col-sm-12  col-xs-12">
+
+      <figure>
+      <br>
+                                  <a title="{{talk.speaker}}" href="#">
+
+      <img src="{{ talk.image.url }}" class="candidate-image wp-post-image" alt="{{talk.speaker}}" width="100%" height="230px" />
+
+             </a>
+
+                              </figure>
+
+
+
+
+                            <div class="post-meta clearfix" style="background-color: #e8e9ef;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+<center><h4 class="post-title" style="font-size:21px; font-weight: 700;align="center";" ><a href="{% url 'talk_part' pk=talk.pk %}" title = "{{talk.topic}}"  > {{talk.topic|truncatechars_html:28}}</a></h4></center>
+                                <center><span>By</span> <a rel="author" title="Speaker" href="#">{{talk.speaker}}</a></center>
+
+
+                              <center>  <span class="date"> {{talk.date_and_time}}</span></center>
+
+                              <center>  <span class="category">in <a title="Venue" href="#">{{talk.venue}}</a></span></center>
+                                <br>
+                                <p>{{talk.abstract|truncatechars:105}}</p>
+<a class="pp-btn grey" href="{% url 'talk_part' pk=talk.pk %}">Read More</a>
+                            </div><!-- end of post meta -->
+
+                </div>
+
+
+{% endfor %}
+
+</div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if talks.has_previous %}
+            <a href="?page={{ talks.previous_page_number }}">PREVIOUS</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ talks.number }} of {{ talks.paginator.num_pages }}.
+        </span>
+
+        {% if talks.has_next %}
+            <a href="?page={{ talks.next_page_number }}">NEXT</a>
+        {% endif %}
+    </span>
+</div>
+
+
+{% endblock %}
+
+

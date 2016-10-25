@@ -1,0 +1,59 @@
+{% extends 'talks/base.html' %}
+
+{% block content  %}
+<!-- .header-bottom-wrapper -->
+<div class="header-bottom-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Page Head -->
+            <div class="page-head col-lg-12">
+                <h2 class="page-title">Gallery</h2>
+            </div>
+            <!-- End Page Head -->
+        </div>
+    </div>
+</div><!-- End of .header-bottom-wrapper -->
+
+<!-- page-container -->
+<div class="page-container container">
+
+    <!-- Gallery Filter -->
+<!--    <div id="filter-by" class="clearfix">
+		<p><a class="pp-btn" href="{% url 'all_photo' %}">All</a></p>
+</div> -->
+
+    <div id="gallery-container">
+        <div class="row gallery-4-columns isotope clearfix">
+		{% for photo in acad_photos %}
+            <div class="gallery-item isotope-item issues  col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <figure>
+					<a class="zoom swipebox" href="{{photo.image.url}}" title="{{photo.title}}"></a>
+                    <div class="media_container"></div>
+					<img src="{{photo.image.url}}" alt="{{photo.album}}" width="346px" height="200px">
+                </figure>
+				<h5 class="item-title"><a href="#" title="{{photo.title}}">{{photo.title}}</a></h5>
+            </div>
+		{% endfor %}
+
+        </div>
+    </div>
+
+</div><!-- End of .page-container -->
+
+{% endblock  %}
+
+
+<!--<div class="pagination">
+	    <span class="step-links">
+			{% if p.has_previous %}
+			<a href="?page={{ p.previous_page_number }}">Previous</a>
+			{% endif %}
+			<span class="current">
+				Page {{ p.number }} of {{ p.paginator.num_pages }}
+			</span>
+			{% if p.has_next %}
+			<a href="?page={{  p.next_page_number }}">Next</a>
+			{% endif %}
+		</span>
+</div>-->
+
